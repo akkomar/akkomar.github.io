@@ -1,0 +1,23 @@
+---
+published: true
+title: Running Spark 2.0 on Cloudera Hadoop
+layout: post
+tags: [spark, hadoop]
+---
+Sometimes we might need to run latest Spark applications on Hadoop distribution which does not support it via its package channel (e.g. Cloudera reserves few months for testing).
+Since we can run Spark applications on YARN, we can use another version of Spark (read: latest) for submitting applications to our existing cluster.
+
+Here's a list of steps we need to execute:
+1. Download / build Spark (`./dev/make-distribution.sh --name custom-spark --tgz -Phadoop-2.6 -Phive -Phive-thriftserver -Pyarn`)
+1. Go to unpacked distribution directory and copy needed, current configuration files here:
+```
+cp -R /etc/spark/conf/* conf/
+cp /etc/hive/conf/hive-site.xml conf/
+cp /etc/hive/conf/core-site.xml conf/
+cp /etc/hive/conf/hdfs-site.xml conf/
+```
+1. Update spark-env:
+```
+sed -i "s#\(.*SPARK_HOME\)=.*#\1=$(pwd)#" conf/spark-env.sh
+```
+1.
