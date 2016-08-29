@@ -12,8 +12,8 @@ description: > # this means to ignore newlines until "baseurl:"
   Software, JVM, Scala, Cassandra
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://akkomar.github.io" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: akomarzewski
+github_username:  akkomar
 
 # Build settings
 markdown: kramdown
