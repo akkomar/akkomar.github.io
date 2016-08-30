@@ -3,7 +3,9 @@ published: true
 title: Akka - best practices
 layout: post
 tags: [akka]
+comments: true
 ---
+*Work in progress...*
 # Creating actors
 Instead of creating actors by type signature:
 
@@ -37,4 +39,3 @@ object ApiActor {
 
 Above snippet shows another nice trick which makes your code easier to understand -
  we can define all messages our actor can receive in its companion object.
-

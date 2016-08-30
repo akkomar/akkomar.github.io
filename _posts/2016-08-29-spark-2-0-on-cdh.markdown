@@ -3,6 +3,7 @@ published: true
 title: Running Spark 2.0 on CDH cluster
 layout: post
 tags: [spark, hadoop]
+comments: true
 ---
 Sometimes we might need to run latest Spark version on Hadoop distribution which does not support it via its package channel (e.g. Cloudera reserves few months for testing). That's the case with recently released Spark 2.0
 
