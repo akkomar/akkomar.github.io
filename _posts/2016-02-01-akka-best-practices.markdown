@@ -6,6 +6,7 @@ tags: [akka]
 comments: true
 ---
 *Work in progress...*
+
 # Creating actors
 Instead of creating actors by type signature:
 
