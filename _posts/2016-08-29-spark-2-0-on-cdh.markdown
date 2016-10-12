@@ -13,7 +13,7 @@ Here's a list of steps we need to execute to manually set up Spark distribution 
 
 1. Download / build Spark
 
-        ./dev/make-distribution.sh --name custom-spark --tgz -Phadoop-2.6 -Phive -Phive-thriftserver -Pyarn
+        ./dev/make-distribution.sh --name custom-spark --tgz -Phadoop-2.6 -Phive -Phive-thriftserver -Pyarn -Phadoop-provided
 
 1. Go to unpacked distribution directory and copy needed, current configuration files here:
 
@@ -30,7 +30,7 @@ Here's a list of steps we need to execute to manually set up Spark distribution 
 
         cd  $SPARK_HOME
         hdfs dfs mkdir /some/path/spark-2.0.0-bin-hadoop-hive
-        hdfs dfs -copyFromLocal jars/* spark-2.0.0-bin-hadoop-hive
+        hdfs dfs -copyFromLocal jars/* /some/path/spark-2.0.0-bin-hadoop-hive
 
 1. Update spark-defaults.conf
 
@@ -40,7 +40,7 @@ Here's a list of steps we need to execute to manually set up Spark distribution 
 
     * Delete spark.yarn.jar from spark-defaults.conf:
 
-            sed '-i /spark.yarn.jar/d' conf/spark-defaults.conf
+            sed -i '/spark.yarn.jar/d' conf/spark-defaults.conf
 
     * Set spark.yarn.jars path to previously created library directory:
 
