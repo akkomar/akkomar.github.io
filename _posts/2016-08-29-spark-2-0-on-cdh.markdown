@@ -29,7 +29,7 @@ Here's a list of steps we need to execute to manually set up Spark distribution 
 1. Copy Spark libraries to the cluster (YARN nodes' local filesystems or HDFS, here we'll use the latter):
 
         cd  $SPARK_HOME
-        hdfs dfs mkdir /some/path/spark-2.0.0-bin-hadoop-hive
+        hdfs dfs -mkdir /some/path/spark-2.0.0-bin-hadoop-hive
         hdfs dfs -copyFromLocal jars/* /some/path/spark-2.0.0-bin-hadoop-hive
 
 1. Update spark-defaults.conf
